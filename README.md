@@ -1,29 +1,29 @@
-![Docker Pulls](https://img.shields.io/docker/pulls/aligent/serverless)
-![Docker Image Version (latest semver)](https://img.shields.io/docker/v/aligent/serverless?sort=semver)
+![Docker Pulls](https://img.shields.io/docker/pulls/aligent/aio)
+![Docker Image Version (latest semver)](https://img.shields.io/docker/v/aligent/aio?sort=semver)
 
 # Introduction
 
-Docker image for running the serverless command without requiring it to be installed. It is available on docker 
-hub as [aligent/serverless](https://hub.docker.com/r/aligent/serverless).
+Docker image for running the aio command without requiring it to be installed. It is available on docker 
+hub as [aligent/aio](https://hub.docker.com/r/aligent/aio).
 
 ## Installation
 
 Add the following lines to your `~/.bashrc` file to be able to run it easily...
 
 ```
-alias node-run='docker run --rm -it --volume ~/.aws:/home/node/.aws --volume ~/.azure:/home/node/.azure --volume ~/.npm:/home/node/.npm --volume "$PWD:/app" aligent/serverless'
-alias serverless='node-run serverless'
+alias appbuilder='docker run --rm -it --volume ~/.npm:/home/node/.npm --volume "$PWD:/app" --volume ~/.config:/home/node/.config -v "/var/run/docker.sock:/var/run/docker.sock:rw" --network host aligent/aio'
+alias aio='appbuilder aio'
+
 ```
 
 You will then need to reload your bashrc file, either by running `. ~/.bashrc` or starting a new terminal session.
 
 ## Usage
 
-You can now run serverless normally.
-
-To create a new project for example:
+You can now run aio normally.
 
 ```
-serverless create --template aws-nodejs --path test-service
+aio --version
+aio help 
 ```
 
