@@ -8,6 +8,7 @@ RUN apk update && \
       sudo bash less shadow docker && \
     rm -rf /var/cache/apk/*
 
+ENV PATH=$PATH:/home/node/.npm-global/bin:/aio/node_modules/@adobe/aio-cli/bin/
 USER node
 WORKDIR /aio
 
