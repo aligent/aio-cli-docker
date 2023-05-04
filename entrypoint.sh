@@ -23,10 +23,6 @@ chown -R node:node /var/run/docker.sock
 
 cd $APP_ROOT
 
-if [ "$PIPELINE" = true ]; then
-  exec sudo -u node /aio/node_modules/@adobe/aio-cli/bin/aio telemetry off
-fi
-
 if [ "${1:-}" = "aio" ]; then
   shift
   exec sudo -u node /aio/node_modules/@adobe/aio-cli/bin/aio "$@"
