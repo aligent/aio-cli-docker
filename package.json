@@ -4,6 +4,6 @@
   "author": "Daniel van der Ploeg <daniel.vanderploeg@aligent.com.au> (https://aligent.com.au)",
   "license": "GPL-3.0",
   "dependencies": {
-    "@adobe/aio-cli": "9.2.0"
+    "@adobe/aio-cli": "9.3.0"
   }
 }
