@@ -1,4 +1,4 @@
-FROM node:18.16-alpine3.16
+FROM node:20.2-alpine3.16
 
 RUN mkdir /app /aio /home/node/.config /home/node/.cache
 RUN chown node:node /app /aio /home/node/.config  /home/node/.cache
